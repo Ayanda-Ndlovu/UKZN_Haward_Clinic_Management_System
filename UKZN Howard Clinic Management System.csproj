@@ -1,0 +1,792 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{712CDC66-3556-42A2-B089-FF8A963E6DFF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>UKZN_Howard_Clinic_Management_System</RootNamespace>
+    <AssemblyName>UKZN Howard Clinic Management System</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminAppointmentReportDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdminAppointmentReportDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Databases\G15Wst2024DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G15Wst2024DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="G15Wst2024DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>G15Wst2024DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\AdminRole\AddStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\AdminRole\AddStaff.Designer.cs">
+      <DependentUpon>AddStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\AdminRole\AdminForms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\AdminRole\AdminForms.Designer.cs">
+      <DependentUpon>AdminForms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\AdminRole\AdminReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\AdminRole\AdminReport.Designer.cs">
+      <DependentUpon>AdminReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\AdminRole\Appointment.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Appointment.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Interfaces\AdminRole\AppointmentReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppointmentReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Interfaces\AdminRole\CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Interfaces\AdminRole\ManagePatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\AdminRole\ManagePatient.Designer.cs">
+      <DependentUpon>ManagePatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\AdminRole\Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\AdminRole\Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\AdminRole\UpdatePatientDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\AdminRole\UpdatePatientDetails.Designer.cs">
+      <DependentUpon>UpdatePatientDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\AdminRole\UpdateStaffDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\AdminRole\UpdateStaffDetails.Designer.cs">
+      <DependentUpon>UpdateStaffDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\AdminRole\UserAdminstration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\AdminRole\UserAdminstration.Designer.cs">
+      <DependentUpon>UserAdminstration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\DoctorRole\AppointmentDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\DoctorRole\AppointmentDetails.Designer.cs">
+      <DependentUpon>AppointmentDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\DoctorRole\AddAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\DoctorRole\AddAppointment.Designer.cs">
+      <DependentUpon>AddAppointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\DoctorRole\AddAppointmentByDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\DoctorRole\AddAppointmentByDoctor.Designer.cs">
+      <DependentUpon>AddAppointmentByDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\DoctorRole\AddAppointmentMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\DoctorRole\AddAppointmentMainForm.Designer.cs">
+      <DependentUpon>AddAppointmentMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\DoctorRole\AppointmentDetails1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\DoctorRole\AppointmentDetails1.Designer.cs">
+      <DependentUpon>AppointmentDetails1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\DoctorRole\Doctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\DoctorRole\Doctor.Designer.cs">
+      <DependentUpon>Doctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\DoctorRole\AddMedicine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\DoctorRole\AddMedicine.Designer.cs">
+      <DependentUpon>AddMedicine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\DoctorRole\AppointmentUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\DoctorRole\AppointmentUI.Designer.cs">
+      <DependentUpon>AppointmentUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\DoctorRole\DoctorMedDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\DoctorRole\DoctorMedDetails.Designer.cs">
+      <DependentUpon>DoctorMedDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\DoctorRole\Medication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\DoctorRole\Medication.Designer.cs">
+      <DependentUpon>Medication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Email\Compose.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Email\Compose.Designer.cs">
+      <DependentUpon>Compose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\AllPatientsUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\AllPatientsUI.Designer.cs">
+      <DependentUpon>AllPatientsUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\AdminRole\Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\AdminRole\Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Email\MainEmailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Email\MainEmailsForm.Designer.cs">
+      <DependentUpon>MainEmailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\MainForms\HelpPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\MainForms\HelpPanel.Designer.cs">
+      <DependentUpon>HelpPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Manager\Add Medication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Manager\Add Medication.Designer.cs">
+      <DependentUpon>Add Medication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Manager\AddNewStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Manager\AddNewStaff.Designer.cs">
+      <DependentUpon>AddNewStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Manager\ClinicInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Manager\ClinicInventory.Designer.cs">
+      <DependentUpon>ClinicInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Manager\Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Manager\Manager.Designer.cs">
+      <DependentUpon>Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Manager\ManagerReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Manager\ManagerReport.Designer.cs">
+      <DependentUpon>ManagerReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Manager\ManagerInventoryReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ManagerInventoryReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Manager\ManageStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Manager\ManageStaff.Designer.cs">
+      <DependentUpon>ManageStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Manager\MAnageSuppliers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Manager\MAnageSuppliers.Designer.cs">
+      <DependentUpon>MAnageSuppliers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Manager\ManageWages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Manager\ManageWages.Designer.cs">
+      <DependentUpon>ManageWages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Manager\PlaceOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Manager\PlaceOrder.Designer.cs">
+      <DependentUpon>PlaceOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Manager\PlaceOrderII.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Manager\PlaceOrderII.Designer.cs">
+      <DependentUpon>PlaceOrderII.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Manager\UpdateStaffDetailsBymanager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Manager\UpdateStaffDetailsBymanager.Designer.cs">
+      <DependentUpon>UpdateStaffDetailsBymanager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Manager\UpdateSupplierDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Manager\UpdateSupplierDetails.Designer.cs">
+      <DependentUpon>UpdateSupplierDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\MainForms\MDIFormContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\MainForms\MDIFormContainer.Designer.cs">
+      <DependentUpon>MDIFormContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\MainForms\LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\MainForms\LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\DoctorRole\MedicalRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\DoctorRole\MedicalRecord.Designer.cs">
+      <DependentUpon>MedicalRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\AdminRole\AddPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\AdminRole\AddPatient.Designer.cs">
+      <DependentUpon>AddPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\MedicationDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\MedicationDetailForm.Designer.cs">
+      <DependentUpon>MedicationDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\MainForms\MessageBoxx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\MainForms\MessageBoxx.Designer.cs">
+      <DependentUpon>MessageBoxx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\NurseRole\AddAppointmentByNurse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\NurseRole\AddAppointmentByNurse.Designer.cs">
+      <DependentUpon>AddAppointmentByNurse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\NurseRole\AddAppointmentMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\NurseRole\AddAppointmentMain.Designer.cs">
+      <DependentUpon>AddAppointmentMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\NurseRole\AddMedicineByNurse0.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\NurseRole\AddMedicineByNurse0.Designer.cs">
+      <DependentUpon>AddMedicineByNurse0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\NurseRole\AppointmentDetailsByNurse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\NurseRole\AppointmentDetailsByNurse.Designer.cs">
+      <DependentUpon>AppointmentDetailsByNurse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\NurseRole\MedicalRecordByNuirse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\NurseRole\MedicalRecordByNuirse.Designer.cs">
+      <DependentUpon>MedicalRecordByNuirse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\NurseRole\MedicationDetailsByNurse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\NurseRole\MedicationDetailsByNurse.Designer.cs">
+      <DependentUpon>MedicationDetailsByNurse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\NurseRole\MedicationNurse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\NurseRole\MedicationNurse.Designer.cs">
+      <DependentUpon>MedicationNurse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\NurseRole\Nurse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\NurseRole\Nurse.Designer.cs">
+      <DependentUpon>Nurse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\NurseRole\SearchpatientByNurse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\NurseRole\SearchpatientByNurse.Designer.cs">
+      <DependentUpon>SearchpatientByNurse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\NurseRole\ViewAppointmentsByNurse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\NurseRole\ViewAppointmentsByNurse.Designer.cs">
+      <DependentUpon>ViewAppointmentsByNurse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\PassworUI\AoutoPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\PassworUI\AoutoPassword.Designer.cs">
+      <DependentUpon>AoutoPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\PassworUI\NewPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\PassworUI\NewPassword.Designer.cs">
+      <DependentUpon>NewPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\PassworUI\ResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\PassworUI\ResetPassword.Designer.cs">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\Email\ViewEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Email\ViewEmail.Designer.cs">
+      <DependentUpon>ViewEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventorySupplierDS1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InventorySupplierDS1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MajorProjectDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MajorProjectDB.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Interfaces\AdminRole\QueuePatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\AdminRole\QueuePatient.Designer.cs">
+      <DependentUpon>QueuePatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\DoctorRole\SearchPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\DoctorRole\SearchPatient.Designer.cs">
+      <DependentUpon>SearchPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\MainForms\SystemConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\MainForms\SystemConfiguration.Designer.cs">
+      <DependentUpon>SystemConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SessionManager.cs" />
+    <EmbeddedResource Include="Interfaces\AdminRole\AddStaff.resx">
+      <DependentUpon>AddStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\AdminRole\AdminForms.resx">
+      <DependentUpon>AdminForms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\AdminRole\AdminReport.resx">
+      <DependentUpon>AdminReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\AdminRole\Appointment.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Appointment.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\AdminRole\AppointmentReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AppointmentReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\AdminRole\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\AdminRole\ManagePatient.resx">
+      <DependentUpon>ManagePatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\AdminRole\Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\AdminRole\UpdatePatientDetails.resx">
+      <DependentUpon>UpdatePatientDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\AdminRole\UpdateStaffDetails.resx">
+      <DependentUpon>UpdateStaffDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\AdminRole\UserAdminstration.resx">
+      <DependentUpon>UserAdminstration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\DoctorRole\AppointmentDetails.resx">
+      <DependentUpon>AppointmentDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\DoctorRole\AddAppointment.resx">
+      <DependentUpon>AddAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\DoctorRole\AddAppointmentMainForm.resx">
+      <DependentUpon>AddAppointmentMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\DoctorRole\AppointmentDetails1.resx">
+      <DependentUpon>AppointmentDetails1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\DoctorRole\Doctor.resx">
+      <DependentUpon>Doctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\DoctorRole\AddMedicine.resx">
+      <DependentUpon>AddMedicine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\DoctorRole\AppointmentUI.resx">
+      <DependentUpon>AppointmentUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\DoctorRole\DoctorMedDetails.resx">
+      <DependentUpon>DoctorMedDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\DoctorRole\Medication.resx">
+      <DependentUpon>Medication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Email\Compose.resx">
+      <DependentUpon>Compose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\AllPatientsUI.resx">
+      <DependentUpon>AllPatientsUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\AdminRole\Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Email\MainEmailsForm.resx">
+      <DependentUpon>MainEmailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\MainForms\HelpPanel.resx">
+      <DependentUpon>HelpPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Manager\Add Medication.resx">
+      <DependentUpon>Add Medication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Manager\AddNewStaff.resx">
+      <DependentUpon>AddNewStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Manager\ClinicInventory.resx">
+      <DependentUpon>ClinicInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Manager\Manager.resx">
+      <DependentUpon>Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Manager\ManagerReport.resx">
+      <DependentUpon>ManagerReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Manager\ManagerInventoryReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ManagerInventoryReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Manager\ManageStaff.resx">
+      <DependentUpon>ManageStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Manager\MAnageSuppliers.resx">
+      <DependentUpon>MAnageSuppliers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Manager\ManageWages.resx">
+      <DependentUpon>ManageWages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Manager\PlaceOrder.resx">
+      <DependentUpon>PlaceOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Manager\PlaceOrderII.resx">
+      <DependentUpon>PlaceOrderII.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Manager\UpdateStaffDetailsBymanager.resx">
+      <DependentUpon>UpdateStaffDetailsBymanager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Manager\UpdateSupplierDetails.resx">
+      <DependentUpon>UpdateSupplierDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\MainForms\MDIFormContainer.resx">
+      <DependentUpon>MDIFormContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\MainForms\LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\DoctorRole\MedicalRecord.resx">
+      <DependentUpon>MedicalRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\AdminRole\AddPatient.resx">
+      <DependentUpon>AddPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\MedicationDetailForm.resx">
+      <DependentUpon>MedicationDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\MainForms\MessageBoxx.resx">
+      <DependentUpon>MessageBoxx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\NurseRole\AddAppointmentByNurse.resx">
+      <DependentUpon>AddAppointmentByNurse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\NurseRole\AddAppointmentMain.resx">
+      <DependentUpon>AddAppointmentMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\NurseRole\AddMedicineByNurse0.resx">
+      <DependentUpon>AddMedicineByNurse0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\NurseRole\AppointmentDetailsByNurse.resx">
+      <DependentUpon>AppointmentDetailsByNurse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\NurseRole\MedicalRecordByNuirse.resx">
+      <DependentUpon>MedicalRecordByNuirse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\NurseRole\MedicationDetailsByNurse.resx">
+      <DependentUpon>MedicationDetailsByNurse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\NurseRole\MedicationNurse.resx">
+      <DependentUpon>MedicationNurse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\NurseRole\Nurse.resx">
+      <DependentUpon>Nurse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\NurseRole\SearchpatientByNurse.resx">
+      <DependentUpon>SearchpatientByNurse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\NurseRole\ViewAppointmentsByNurse.resx">
+      <DependentUpon>ViewAppointmentsByNurse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\PassworUI\AoutoPassword.resx">
+      <DependentUpon>AoutoPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\PassworUI\NewPassword.resx">
+      <DependentUpon>NewPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\PassworUI\ResetPassword.resx">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\Email\ViewEmail.resx">
+      <DependentUpon>ViewEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Interfaces\AdminRole\QueuePatient.resx">
+      <DependentUpon>QueuePatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\DoctorRole\SearchPatient.resx">
+      <DependentUpon>SearchPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\MainForms\SystemConfiguration.resx">
+      <DependentUpon>SystemConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="AdminAppointmentReportDS.xsc">
+      <DependentUpon>AdminAppointmentReportDS.xsd</DependentUpon>
+    </None>
+    <None Include="AdminAppointmentReportDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AdminAppointmentReportDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AdminAppointmentReportDS.xss">
+      <DependentUpon>AdminAppointmentReportDS.xsd</DependentUpon>
+    </None>
+    <None Include="Databases\G15Wst2024DataSet.xsc">
+      <DependentUpon>G15Wst2024DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Databases\G15Wst2024DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>G15Wst2024DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Databases\G15Wst2024DataSet.xss">
+      <DependentUpon>G15Wst2024DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="G15Wst2024DataSet.xsc">
+      <DependentUpon>G15Wst2024DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="G15Wst2024DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>G15Wst2024DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="G15Wst2024DataSet.xss">
+      <DependentUpon>G15Wst2024DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="InventorySupplierDS1.xsc">
+      <DependentUpon>InventorySupplierDS1.xsd</DependentUpon>
+    </None>
+    <None Include="InventorySupplierDS1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InventorySupplierDS1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InventorySupplierDS1.xss">
+      <DependentUpon>InventorySupplierDS1.xsd</DependentUpon>
+    </None>
+    <None Include="MajorProjectDB.xsc">
+      <DependentUpon>MajorProjectDB.xsd</DependentUpon>
+    </None>
+    <None Include="MajorProjectDB.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MajorProjectDB.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MajorProjectDB.xss">
+      <DependentUpon>MajorProjectDB.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.jpeg" />
+    <None Include="Resources\addP-removebg-preview.png" />
+    <None Include="Resources\2355692.png" />
+    <None Include="Resources\2355692-removebg-preview.png" />
+    <None Include="Resources\1000_F_92397908_br85Rxsp1El7BGl3q58K1PimjANGHAJi-removebg-preview.png" />
+    <None Include="Resources\appointment-icon-calendar-removebg-preview.png" />
+    <None Include="Resources\calendar-icon-add-date-event-symbol--removebg-preview.png" />
+    <None Include="Resources\Add_user_icon__blue_.svg-removebg-preview.png" />
+    <None Include="Resources\addStuff-removebg-preview.png" />
+    <None Include="Resources\3595957.png" />
+    <None Include="Resources\3974877.png" />
+    <None Include="Resources\3974877-removebg-preview %281%29.png" />
+    <None Include="Resources\489245-removebg-preview.png" />
+    <Content Include="Resources\doctor-symbol-physician-medicine-doctor-of-medicine-health-pediatrics-online-doctor-health-care-png-clipart-removebg-preview.png" />
+    <None Include="Resources\GroupIcon-removebg-preview.png" />
+    <None Include="Resources\Icons-03-removebg-preview.png" />
+    <None Include="Resources\Icons-03.png" />
+    <None Include="Resources\download2.jpg" />
+    <None Include="Resources\download3.jpg" />
+    <Content Include="Resources\images %281%29.jpg" />
+    <Content Include="Resources\images %282%29.jpg" />
+    <Content Include="Resources\images-removebg-preview.png" />
+    <None Include="Resources\images-removebg-preview1.png" />
+    <Content Include="Resources\images.jpg" />
+    <None Include="Resources\images.png" />
+    <None Include="Resources\images__1_-removebg-preview.png" />
+    <Content Include="Resources\images__2_-removebg-preview.png" />
+    <None Include="Resources\istockphoto-1173213818-1024x1024.jpg" />
+    <Content Include="Resources\istockphoto-1285248235-612x612-removebg-preview.png" />
+    <None Include="Resources\istockphoto-1314421404-1024x1024.jpg" />
+    <Content Include="Resources\laboratory-symbol-with-microscope-vector-5468244-removebg-preview.png" />
+    <None Include="Resources\medical-staff-icon-vector-6088119-removebg-preview.png" />
+    <None Include="Resources\manage_patient_1_-removebg-preview.png" />
+    <None Include="Resources\manage_patient-removebg-preview.png" />
+    <None Include="Resources\manage_patient-removebg-preview1.png" />
+    <None Include="Resources\new-client-icon-outline-add-customer-vector-removebg-preview.png" />
+    <Content Include="Resources\patient-icon-simple-element-from-medical-services-vector-36147880-removebg-preview.png" />
+    <None Include="Resources\UKZN-Logo-Colour-removebg-preview.png" />
+    <None Include="Resources\transparent-user-interface-icon-mail-icon-email-removebg-preview.png" />
+    <None Include="Resources\pngtree-nurse-patients-icon-woman-profile-hierarchy-management-vector-png-image_19995068-removebg-preview.png" />
+    <None Include="Resources\report_icon-removebg-preview.png" />
+    <None Include="Resources\Queue-removebg-preview.png" />
+    <None Include="Resources\pharmaceutical-drug-medicine--removebg-preview.png" />
+    <Content Include="Resources\UniversityofKwaZuluNatal-logo-removebg-preview.png" />
+    <None Include="Resources\user_admin-removebg-preview.png" />
+    <Content Include="Resources\vector-logout-sign-icon-removebg-preview.png" />
+    <Content Include="Resources\WhatsApp Image 2024-04-02 at 4.41.22 PM.jpeg" />
+    <Content Include="Resources\WhatsApp Image 2024-04-02 at 4.42.20 PM.jpeg" />
+    <Content Include="Resources\WhatsApp Image 2024-04-02 at 4.55.41 PM.jpeg" />
+    <Content Include="Resources\WhatsApp Image 2024-04-02 at 4.58.14 PM.jpeg" />
+    <Content Include="Resources\WhatsApp Image 2024-04-02 at 5.13.06 PM.jpeg" />
+    <Content Include="Resources\WhatsApp Image 2024-04-02 at 5.13.07 PM %281%29.jpeg" />
+    <Content Include="Resources\WhatsApp Image 2024-04-02 at 5.13.07 PM.jpeg" />
+    <Content Include="Resources\WhatsApp Image 2024-04-02 at 5.33.37 PM.jpeg" />
+    <Content Include="Resources\WhatsApp_Image_2024-04-02_at_12.37.14_PM-removebg-preview.png" />
+    <Content Include="Resources\WhatsApp_Image_2024-04-02_at_12.37.14_PM__1_-removebg-preview.png" />
+    <Content Include="Resources\WhatsApp_Image_2024-04-02_at_12.37.14_PM__2_-removebg-preview.png" />
+    <Content Include="Resources\WhatsApp_Image_2024-04-02_at_4.42.20_PM-removebg-preview %281%29.png" />
+    <Content Include="Resources\WhatsApp_Image_2024-04-02_at_4.42.20_PM-removebg-preview.png" />
+    <Content Include="Resources\WhatsApp_Image_2024-04-02_at_4.55.41_PM-removebg-preview.png" />
+    <Content Include="Resources\WhatsApp_Image_2024-04-02_at_5.13.06_PM-removebg-preview.png" />
+    <None Include="Resources\Backgroundpicture" />
+    <Content Include="Resources\WhatsApp_Image_2024-04-02_at_5.33.37_PM-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Business\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
